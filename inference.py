@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-from model import model_def
 import pandas as pd
 import json
 from tensorflow.keras.utils import load_img, img_to_array
