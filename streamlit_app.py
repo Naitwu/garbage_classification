@@ -56,7 +56,7 @@ uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png','jpeg'])
 # with col1:
 #         st.write(' ')
 
-classmap_chi = {'cardboard': '紙箱', 'glass': '玻璃', 'mettal': '金屬', 'paper': '紙類', 'plastic': '塑膠', 'tetra pak': '鋁箔包', 'trash': '一般垃圾'}
+classmap_chi = {'cardboard': '紙箱', 'glass': '玻璃', 'metal': '金屬', 'paper': '紙類', 'plastic': '塑膠', 'tetra pak': '鋁箔包', 'trash': '一般垃圾'}
 
 with col2:
 
@@ -99,7 +99,7 @@ with col2:
 
             st.markdown("""
   #### <p style="color:#0A0A0A">* 這個垃圾分類是 {}, 機率為 {:.2f} .</p>
-""".format(classmap_chi[list_of_predictions[2],pred_prob[2]],),  unsafe_allow_html=True)
+""".format(classmap_chi[list_of_predictions[2]],pred_prob[2],),  unsafe_allow_html=True)
 
 
         if pred_prob[3] > 0:
