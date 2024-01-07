@@ -1,16 +1,11 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-#from keras.preprocessing import image
-
 from model import model_def
-
 import pandas as pd
-
-
 import json
-
 from tensorflow.keras.utils import load_img, img_to_array
+
 
 
 def infer(img):
@@ -20,12 +15,10 @@ def infer(img):
     img = load_img(img, target_size = (img_width, img_height))
     img = img_to_array(img)
     img = np.expand_dims(img, axis = 0)/255.
+
     ## Create Model Object
-
-    model = model_def()
-
-    # Loads the weights
-    model.load_weights("training_1/cp.ckpt")
+    model_path = 'model_saved.h5'
+    model = keras.models.load_model(model_path)
 
     predicted_vector = model.predict(img,use_multiprocessing=True)
 
